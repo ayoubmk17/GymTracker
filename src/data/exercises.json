@@ -1,0 +1,75 @@
+[
+  {
+    "id": "ex-1",
+    "name": "Barbell Bench Press",
+    "category": "Chest",
+    "muscles": ["Pectoralis Major", "Triceps", "Deltoids"],
+    "difficulty": "intermediate",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Press the barbell from chest level to full extension."
+  },
+  {
+    "id": "ex-2",
+    "name": "Back Squat",
+    "category": "Legs",
+    "muscles": ["Quadriceps", "Glutes", "Hamstrings"],
+    "difficulty": "intermediate",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Squat down with a barbell on your back and stand back up."
+  },
+  {
+    "id": "ex-3",
+    "name": "Deadlift",
+    "category": "Back",
+    "muscles": ["Erector Spinae", "Hamstrings", "Glutes"],
+    "difficulty": "advanced",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Lift the barbell from the floor to hip level."
+  },
+  {
+    "id": "ex-4",
+    "name": "Overhead Press",
+    "category": "Shoulders",
+    "muscles": ["Deltoids", "Triceps"],
+    "difficulty": "intermediate",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Press a barbell overhead from shoulder level."
+  },
+  {
+    "id": "ex-5",
+    "name": "Pull-Up",
+    "category": "Back",
+    "muscles": ["Latissimus Dorsi", "Biceps"],
+    "difficulty": "advanced",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Pull body weight upward until chin passes the bar."
+  },
+  {
+    "id": "ex-6",
+    "name": "Bicep Curl",
+    "category": "Arms",
+    "muscles": ["Biceps Brachii"],
+    "difficulty": "beginner",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Curl dumbbells to contract biceps."
+  },
+  {
+    "id": "ex-7",
+    "name": "Tricep Pushdown",
+    "category": "Arms",
+    "muscles": ["Triceps"],
+    "difficulty": "beginner",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Push cable down to extend elbows."
+  },
+  {
+    "id": "ex-8",
+    "name": "Leg Press",
+    "category": "Legs",
+    "muscles": ["Quadriceps", "Glutes"],
+    "difficulty": "beginner",
+    "image": "https://images.unsplash.com/photo-1517960413843-0aee8e2b3d8f",
+    "description": "Press weight away using legs on machine."
+  }
+]
+
