@@ -16,7 +16,7 @@ export default function HistoryScreen() {
       <Text style={{ fontSize: 22, fontWeight: '800', color: '#111827', marginBottom: 12 }}>History</Text>
       <FlatList
         data={history}
-        keyExtractor={item => item._id}
+        keyExtractor={item => item._id || item.date}
         renderItem={({ item }) => (
           <View style={{ backgroundColor: '#fff', padding: 12, borderRadius: 12, marginBottom: 8 }}>
             <Text style={{ color: '#111827', fontWeight: '600' }}>{new Date(item.date).toLocaleString()}</Text>

@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ExerciseListScreen from '../screens/Exercises/ExerciseListScreen'
 import ExerciseDetailScreen from '../screens/Exercises/ExerciseDetailScreen'
+import MuscleExercisesScreen from '../screens/Exercises/MuscleExercisesScreen'
 import CreatePlanScreen from '../screens/Plans/CreatePlanScreen'
 import PlanDetailScreen from '../screens/Plans/PlanDetailScreen'
 import StartWorkoutScreen from '../screens/Workout/StartWorkoutScreen'
@@ -21,7 +22,8 @@ const Stack = createNativeStackNavigator()
 
 const ExercisesStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="ExerciseList" component={ExerciseListScreen} options={{ title: 'Exercises' }} />
+    <Stack.Screen name="ExerciseList" component={ExerciseListScreen} options={{ title: 'Exercises', headerShown: false }} />
+    <Stack.Screen name="MuscleExercises" component={MuscleExercisesScreen} options={{ title: 'Exercises', headerShown: false }} />
     <Stack.Screen name="ExerciseDetail" component={ExerciseDetailScreen} options={{ title: 'Exercise' }} />
   </Stack.Navigator>
 )

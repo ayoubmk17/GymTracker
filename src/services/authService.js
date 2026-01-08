@@ -2,10 +2,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import api from './api'
 
 const register = async (name, email, password) => {
-  const { data } = await api.post('/auth/register', { name, email, password })
-  await AsyncStorage.setItem('token', data.token)
-  await AsyncStorage.setItem('user', JSON.stringify(data.user))
-  return data
+  try {
+    const { data } = await api.post('/auth/register', { name, email, password })
+    await AsyncStorage.setItem('token', data.token)
+    await AsyncStorage.setItem('user', JSON.stringify(data.user))
+    return data
+  } catch (e) {
+    throw (e.response?.data?.message) || e.message
+  }
 }
 
 const login = async (email, password) => {

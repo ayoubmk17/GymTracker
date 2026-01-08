@@ -4,6 +4,7 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, bootstrapAuth } from '../../store/userSlice'
+import { unwrapResult } from '@reduxjs/toolkit'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('')
@@ -22,8 +23,30 @@ export default function LoginScreen({ navigation }) {
     }
   }, [error])
 
-  const onSubmit = () => {
-    dispatch(login({ email, password }))
+  useEffect(() => {
+    // if we arrived here after registration, show a success alert
+    const msg = navigation.getState()?.routes?.find(r => r.name === 'Login')?.params?.success
+    if (msg) {
+      Alert.alert('Success', msg)
+      // clear param
+      navigation.setParams({ success: null })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (status === 'succeeded') {
+      // navigate to main Exercises tab after successful login
+      navigation.navigate('Exercises')
+    }
+  }, [status])
+
+  const onSubmit = async () => {
+    try {
+      const action = await dispatch(login({ email, password }))
+      unwrapResult(action)
+    } catch (err) {
+      Alert.alert('Login failed', err?.message || 'Check credentials')
+    }
   }
 
   return (
