@@ -32,5 +32,8 @@
     "react-native-worklets": "0.5.1",
     "react-redux": "^9.1.2",
     "victory-native": "^36.6.11"
+  },
+  "devDependencies": {
+    "@expo/ngrok": "^4.1.3"
   }
 }

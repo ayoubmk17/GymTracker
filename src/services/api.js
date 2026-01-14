@@ -27,6 +27,8 @@ api.interceptors.request.use(async config => {
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
   }
+  // Bypass localtunnel warning page
+  config.headers['Bypass-Tunnel-Reminder'] = 'true'
   return config
 })
 

@@ -6,6 +6,13 @@ const list = async params => {
     const { data } = await api.get('/exercises', { params })
     return data
   } catch (e) {
+    console.error('API Error details:', {
+      message: e.message,
+      code: e.code,
+      url: e.config?.baseURL + e.config?.url,
+      status: e.response?.status
+    })
+
     let items = exercisesLocal
     if (params?.q) {
       items = items.filter(x => x.name.toLowerCase().includes(params.q.toLowerCase()))

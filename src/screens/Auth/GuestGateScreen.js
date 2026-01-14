@@ -13,7 +13,6 @@ export default function GuestGateScreen({ navigation }) {
         title="Login"
         onPress={() => {
           navigation.navigate('Login')
-          navigation.getParent()?.navigate('Login')
         }}
         style={{ marginBottom: 12 }}
       />
@@ -21,7 +20,6 @@ export default function GuestGateScreen({ navigation }) {
         title="Register"
         onPress={() => {
           navigation.navigate('Register')
-          navigation.getParent()?.navigate('Register')
         }}
       />
     </View>
