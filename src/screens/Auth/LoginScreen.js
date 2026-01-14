@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }) {
   useEffect(() => {
     if (status === 'succeeded') {
       // navigate to main Exercises tab after successful login
-      navigation.navigate('Exercises')
+      navigation.getParent()?.navigate('Exercises')
     }
   }, [status])
 

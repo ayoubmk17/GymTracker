@@ -1,21 +1,26 @@
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Platform } from 'react-native'
+import Constants from 'expo-constants'
 
-// Choose a sensible default API host depending on environment.
-// On Android emulators, 'localhost' refers to the device/emulator itself,
-// so we use the emulator host bridge `10.0.2.2` for the default.
-const envUrl = process.env.EXPO_PUBLIC_API_URL
-let baseURL = envUrl
-if (!baseURL) {
-  if (Platform.OS === 'android') {
-    baseURL = 'http://10.0.2.2:5001'
-  } else {
-    baseURL = 'http://localhost:5001'
+const getBaseUrl = () => {
+  if (process.env.EXPO_PUBLIC_API_URL) {
+    return process.env.EXPO_PUBLIC_API_URL
   }
+
+  const hostUri = Constants.expoConfig?.hostUri || Constants.manifest?.debuggerHost
+  if (hostUri) {
+    const host = hostUri.split(':')[0]
+    return `http://${host}:5001`
+  }
+
+  if (Platform.OS === 'android') {
+    return 'http://10.0.2.2:5001'
+  }
+  return 'http://localhost:5001'
 }
 
-const api = axios.create({ baseURL })
+const api = axios.create({ baseURL: getBaseUrl() })
 
 api.interceptors.request.use(async config => {
   const token = await AsyncStorage.getItem('token')

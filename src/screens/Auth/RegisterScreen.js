@@ -21,8 +21,8 @@ export default function RegisterScreen({ navigation }) {
       setSuccess('Account created — you are signed in')
       setTimeout(() => {
         setSuccess('')
-        navigation.navigate('Exercises')
-      }, 1500)
+        navigation.getParent()?.navigate('Exercises')
+      }, 900)
     } catch (err) {
       Alert.alert('Register failed', err?.message || 'Check inputs')
     }
